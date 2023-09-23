@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    tools:context=".ui.fragment.HomeFragment"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_makanan"
+            android:layout_width="0dp"
+            tools:listitem="@layout/item_makanan"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/list_button"
+            app:layout_constraintStart_toStartOf="@+id/listMakananText"
+            app:layout_constraintTop_toBottomOf="@+id/listMakananText" />
+
+        <LinearLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/header_name"
+                    style="@style/MediumText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_header_name"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/header_greeting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_header_greeting"
+                    android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:contentDescription="@string/for_look_what_i_have_added_to_cart"
+                    android:id="@+id/cartButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@null"
+                    app:srcCompat="@drawable/baseline_shopping_cart_24" />
+
+                <ImageButton
+                    android:id="@+id/profileButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@null"
+                    android:contentDescription="@string/for_see_profile_user"
+                    app:srcCompat="@drawable/baseline_account_circle_24" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_banner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="16dp"
+            app:layout_constraintEnd_toEndOf="@+id/header"
+            app:layout_constraintStart_toStartOf="@+id/header"
+            app:layout_constraintTop_toBottomOf="@id/header">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="110dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/bannerBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/banner_background" />
+
+                <View
+                    android:id="@+id/blackBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alpha="0.6"
+                    android:background="@color/black" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_text_diskon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/diskonText"
+                    android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/diskon_image"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_banner_desc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="@string/diskonSubText"
+                    android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/bannerBackground"
+                    app:layout_constraintEnd_toEndOf="@+id/bannerBackground"
+                    app:layout_constraintStart_toStartOf="@+id/tv_text_diskon"
+                    app:layout_constraintTop_toBottomOf="@id/tv_text_diskon" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/diskon_image"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:adjustViewBounds="true"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_banner_desc"
+                    app:layout_constraintStart_toStartOf="@+id/bannerBackground"
+                    app:layout_constraintTop_toTopOf="@+id/tv_text_diskon"
+                    app:srcCompat="@drawable/diskon" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <ImageButton
+            android:id="@+id/riceButton"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:contentDescription="@string/for_buy_rice"
+            android:layout_marginTop="16dp"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/rice"
+            app:layout_constraintStart_toStartOf="@+id/cv_banner"
+            app:layout_constraintTop_toBottomOf="@+id/cv_banner" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/riceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/riceText"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/riceButton"
+            app:layout_constraintStart_toStartOf="@+id/riceButton"
+            app:layout_constraintTop_toBottomOf="@+id/riceButton" />
+
+        <ImageButton
+            android:id="@+id/mieButton"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:contentDescription="@string/for_buy_noodle"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="16dp"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/noodle"
+            app:layout_constraintStart_toEndOf="@+id/riceButton"
+            app:layout_constraintTop_toBottomOf="@+id/cv_banner" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/mieText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/mie_text"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/mieButton"
+            app:layout_constraintStart_toStartOf="@+id/mieButton"
+            app:layout_constraintTop_toBottomOf="@+id/mieButton" />
+
+        <ImageButton
+            android:contentDescription="@string/for_buy_snack"
+            android:id="@+id/snackButton"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="16dp"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/snack"
+            app:layout_constraintStart_toEndOf="@+id/mieButton"
+            app:layout_constraintTop_toBottomOf="@+id/cv_banner" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/snackText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/snackText"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/snackButton"
+            app:layout_constraintStart_toStartOf="@+id/snackButton"
+            app:layout_constraintTop_toBottomOf="@+id/snackButton" />
+
+        <ImageButton
+            android:id="@+id/drinkButton"
+            android:layout_width="75dp"
+            android:contentDescription="@string/for_buy_drink"
+            android:layout_height="75dp"
+            android:layout_marginTop="16dp"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/icedtea"
+            app:layout_constraintEnd_toEndOf="@+id/cv_banner"
+            app:layout_constraintTop_toBottomOf="@+id/cv_banner" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/drinkText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/drinkText"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/drinkButton"
+            app:layout_constraintStart_toStartOf="@+id/drinkButton"
+            app:layout_constraintTop_toBottomOf="@+id/drinkButton" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/listMakananText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/list_menu_keterangan"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:fontFamily="sans-serif-black"
+            app:layout_constraintStart_toStartOf="@+id/riceButton"
+            app:layout_constraintTop_toBottomOf="@+id/riceText" />
+
+        <ImageButton
+            android:id="@+id/list_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:contentDescription="@string/sort_food_by_name"
+            app:layout_constraintBottom_toBottomOf="@+id/listMakananText"
+            app:layout_constraintEnd_toEndOf="@+id/drinkButton"
+            app:layout_constraintTop_toTopOf="@+id/listMakananText"
+            app:srcCompat="@drawable/baseline_list_24" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

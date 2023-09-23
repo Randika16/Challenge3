@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Challenge2_FoodApp</string>
+    <string name="text_header_name">Hai Binarian,</string>
+    <string name="text_header_greeting">Mau makan apa hari ini?</string>
+    <string name="riceText">Nasi</string>
+    <string name="diskonText">Diskon 30%</string>
+    <string name="diskonSubText">Pesan makanan lewat aplikasi dan dapatkan diskonmu</string>
+    <string name="drinkText">Minuman</string>
+    <string name="snackText">Snack</string>
+    <string name="list_menu_keterangan">List Menu Makanan</string>
+    <string name="ayam_panggang_text">Ayam Panggang</string>
+    <string name="ayam_panggang_price">Rp. 40.000</string>
+    <string name="mie_text">Mie</string>
+    <string name="ayam_goreng_text">Ayam Goreng</string>
+    <string name="ayam_goreng_price">Rp. 50.000</string>
+    <string name="sate_text">Sate</string>
+    <string name="sate_price">Rp. 30.000</string>
+    <string name="pizza_price">Rp. 80.000</string>
+    <string name="pizza_text">Pizza</string>
+    <string name="for_buy_snack">for buy snack</string>
+    <string name="for_look_what_i_have_added_to_cart">for look what i have added to cart</string>
+    <string name="for_buy_rice">for buy rice</string>
+    <string name="for_buy_drink">for buy drink</string>
+    <string name="sort_food_by_name">sort food by name</string>
+    <string name="for_buy_noodle">for buy noodle</string>
+    <string name="for_see_profile_user">for see profile user</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tambah_keranjang">Tambah Keranjang - %1$s</string>
+</resources>
