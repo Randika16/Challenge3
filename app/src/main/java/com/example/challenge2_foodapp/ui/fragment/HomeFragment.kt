@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -89,7 +88,14 @@ class HomeFragment : Fragment() {
         bundle.putString("deskripsi", makanan.deskripsi)
         bundle.putString("lokasi", makanan.lokasi)
         bundle.putString("linkLokasi", makanan.linkLokasi)
-        view?.findNavController()?.navigate(R.id.action_homeFragment_to_detailMakananFragment, bundle)
+
+        val fragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+        val fragment = DetailMakananFragment()
+
+        fragment.arguments = bundle
+        fragmentTransaction.replace(R.id.fragmentContainerView, fragment)
+        fragmentTransaction.addToBackStack(null)
+        fragmentTransaction.commit()
     }
 
     private fun updateListButtonImage() {

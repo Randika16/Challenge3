@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import com.example.challenge2_foodapp.R
 import com.example.challenge2_foodapp.databinding.FragmentDetailMakananBinding
 
@@ -53,7 +52,8 @@ class DetailMakananFragment : Fragment() {
 
         binding.ibMinus.setOnClickListener {
             if (nilaiMakanan <= 0) {
-                Toast.makeText(requireContext(), "Tidak bisa kurang dari 0", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Tidak bisa kurang dari 0", Toast.LENGTH_SHORT)
+                    .show()
             } else {
                 nilaiMakanan--
                 binding.tvJumlah.text = nilaiMakanan.toString()
@@ -66,7 +66,8 @@ class DetailMakananFragment : Fragment() {
         }
 
         binding.backButton.setOnClickListener {
-            findNavController().navigateUp()
+            val fragmentManager = requireActivity().supportFragmentManager
+            fragmentManager.popBackStack()
         }
 
     }
@@ -84,7 +85,11 @@ class DetailMakananFragment : Fragment() {
             startActivity(mapIntent)
         } else {
             // Jika tidak terinstal, Anda dapat menangani kasus ini di sini, misalnya dengan menampilkan pesan kesalahan
-            Toast.makeText(requireContext(), "Aplikasi Google Maps tidak terinstal.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                requireContext(),
+                "Aplikasi Google Maps tidak terinstal.",
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 
